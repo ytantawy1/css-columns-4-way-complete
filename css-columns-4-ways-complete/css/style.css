@@ -1,0 +1,61 @@
+header,
+section,
+footer {
+    width: 1200px;
+    margin: 3em auto;
+}
+
+/*********** floated columns ***********/
+.row > .column {
+    width: 380px;
+    margin-right: 30px;
+    float: left;
+}
+
+.row > .column:last-child {
+    margin-right: 0;
+}
+
+/*********** display inline ***********/
+/*Inline block has the same properties as inline elements, but with width and height allowed*/
+/*Inline elements use and add the spacing from the HTML*/
+
+.inline > .column {
+	display: inline-block;
+	/*The top of the element is aligned with the top of the tallest element on the line*/
+	vertical-align: top;
+	width: 380px;
+	margin-right: 30px;
+}
+
+.inline > .column:last-child {
+    margin-right: 0;
+}
+
+/*********** column count ***********/
+/*Given the number of columns, the browser will evenly distribute the content in exactly that number of columns. Browser prefixes are needed.*/
+
+.column-count-container {
+	-webkit-column-count: 3; /*Saf*/
+	-moz-column-count: 3; /*Fx*/
+	column-count: 3; /*IE 10, Op*/
+	-webkit-column-gap: 30px;
+	-moz-column-gap: 30px;
+	column-gap: 30px;
+}
+
+/*********** flexbox ***********/
+/* This defines a flex container. It enables a flex context for all its direct children. By default, flex items (the children) will all try to fit onto one line. */
+.flexbox-container {
+	display: flex;
+	/* use justification of items to layout spacing for gutters. */
+	justify-content: space-between;
+}
+
+/* It dictates what amount of the available space inside the flex container the item should take up. */
+
+/* If all items have flex-grow set to 1, the remaining space in the container will be distributed equally to all children. */
+.flexbox-container > .column {
+	/* flex: 1; */
+	width: 30%;
+}
